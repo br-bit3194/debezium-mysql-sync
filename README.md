@@ -2,6 +2,10 @@
 
 Debezium MySQL Sync Documentation
 
+## Project Structure 🧬
+
+![Project Flow Structure](assets/flow.png)
+
 ## Overview
 This project sets up a data synchronization pipeline using Debezium, Kafka, and MySQL. It involves two MySQL servers, Kafka for message brokering, and Debezium for change data capture (CDC). The pipeline captures changes from MySQL Server 1 and applies them to MySQL Server 2.
 
@@ -14,14 +18,10 @@ This project sets up a data synchronization pipeline using Debezium, Kafka, and 
 - Applying Changes: Downstream systems, such as another database or an application, can consume the change events from the Kafka topic and apply them as needed.
 
 
-## Prerequisites
+## Prerequisites 🛠️
 - Docker and Docker Compose installed
 - Python 3.12 installed
 - Virtual environment setup
-
-## Project Structure
-
-![Project Flow Structure](assets/flow.png)
 
 ## Setup Instructions
 
