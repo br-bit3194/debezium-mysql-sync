@@ -5,6 +5,15 @@ Debezium MySQL Sync Documentation
 ## Overview
 This project sets up a data synchronization pipeline using Debezium, Kafka, and MySQL. It involves two MySQL servers, Kafka for message brokering, and Debezium for change data capture (CDC). The pipeline captures changes from MySQL Server 1 and applies them to MySQL Server 2.
 
+### What is Debezium?🤔
+- Debezium is an open-source project that provides change data capture (CDC) for various databases. A Debezium connector is a component that monitors a specific database for changes and streams those changes to a Kafka topic. Here's a brief overview of how a Debezium connector works:
+
+- Monitoring Changes: The connector continuously monitors the database for changes such as inserts, updates, and deletes.
+- Capturing Changes: When a change occurs, the connector captures the change event, which includes details about the operation (e.g., the type of change, the affected table, and the new data).
+- Streaming to Kafka: The captured change events are then streamed to a Kafka topic. Kafka acts as a message broker, allowing other systems to consume these change events in real-time.
+- Applying Changes: Downstream systems, such as another database or an application, can consume the change events from the Kafka topic and apply them as needed.
+
+
 ## Prerequisites
 - Docker and Docker Compose installed
 - Python 3.12 installed
@@ -28,7 +37,7 @@ Run the `debezium_connector.py` script to configure the Debezium connector for c
 ### Step 4: Start Kafka Consumer
 Run the `kafka_consumer.py` script to start the Kafka consumer, which will listen for changes and apply them to MySQL Server 2.
 
-## Detailed Steps
+## Detailed Steps 💻
 
 ### 1. Start Docker Containers
 The `docker-compose.yml` file defines the services required for the project, including MySQL servers, Kafka, Zookeeper, and Debezium Connect. Use the following command to start these services:
