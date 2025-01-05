@@ -7,7 +7,7 @@ Debezium MySQL Sync Documentation
 ![Project Flow Structure](assets/flow.png)
 
 ## Overview
-This project sets up a data synchronization pipeline using Debezium, Kafka, and MySQL. It involves two MySQL servers, Kafka for message brokering, and Debezium for change data capture (CDC). The pipeline captures changes from MySQL Server 1 and applies them to MySQL Server 2.
+This project sets up a data synchronization pipeline using Debezium, Kafka, and MySQL. It involves two MySQL servers, Kafka for message brokering, and Debezium for change data capture (CDC). The pipeline captures changes from MySQL Server 1 and applies them to MySQL Server 2. Docker containers are used to run all the necessary services including MySQL, Kafka, Zookeeper, and Debezium Connect.
 
 ### What is Debezium?🤔
 - Debezium is an open-source project that provides change data capture (CDC) for various databases. A Debezium connector is a component that monitors a specific database for changes and streams those changes to a Kafka topic. Here's a brief overview of how a Debezium connector works:
@@ -17,6 +17,16 @@ This project sets up a data synchronization pipeline using Debezium, Kafka, and 
 - Streaming to Kafka: The captured change events are then streamed to a Kafka topic. Kafka acts as a message broker, allowing other systems to consume these change events in real-time.
 - Applying Changes: Downstream systems, such as another database or an application, can consume the change events from the Kafka topic and apply them as needed.
 
+## Technologies
+- **Debezium**: For change data capture (CDC)
+- **Kafka**: For message brokering
+- **MySQL**: As the source and target databases
+- **Docker**: For containerizing the services
+- **Docker Compose**: For orchestrating the Docker containers
+- **Zookeeper**: For managing Kafka
+- **Python**: For scripting and automation
+- **Kafka Python Client**: For consuming Kafka messages
+- **Debezium Connect REST API**: For configuring Debezium connectors
 
 ## Prerequisites 🛠️
 - Docker and Docker Compose installed
